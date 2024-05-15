@@ -1,6 +1,8 @@
 # Agent Demo with LlamaIndex and FewsatsCLI
 
-This repository demonstrates an advanced application integrating the LlamaIndex agent with the FewsatsCLI, specifically designed for data monetization. The agent is capable of handling paywalled content natively using L402, making it ideal for both content creators looking to monetize their documents and consumers seeking to access paid data seamlessly.
+This repository demonstrates an advanced application integrating the [LlamaIndex](https://www.llamaindex.ai/) agent with the [FewsatsCLI](https://github.com/Fewsats/fewsatscli), specifically designed for data monetization. 
+
+The agent is capable of handling paywalled content natively using L402, making it ideal for both content creators looking to monetize their documents and consumers seeking to access paid data seamlessly.
 
 The demo illustrates how documents can be uploaded with set prices and how these documents can be accessed through automated transactions.
 
