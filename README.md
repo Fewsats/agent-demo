@@ -1,46 +1,28 @@
-# Agent Demo with LlamaIndex and FewsatsCLI
+# AI Agents accessing and monetizing data with L402 & Fewsats
 
-This repository demonstrates an advanced application integrating the [LlamaIndex](https://www.llamaindex.ai/) agent with the [FewsatsCLI](https://github.com/Fewsats/fewsatscli), specifically designed for data monetization. 
+This repository showcases two demos integrating LLM Agents with the L402 protocol and the Fewsats platform, focusing on data monetization and automated content access.
 
-The agent is capable of handling paywalled content natively using L402, making it ideal for both content creators looking to monetize their documents and consumers seeking to access paid data seamlessly.
+## Demos Overview
 
-The demo illustrates how documents can be uploaded with set prices and how these documents can be accessed through automated transactions.
+1. **Notebook Demo**: Demonstrates searching and downloading images using a Jupyter notebook. This demo highlights the agent's ability to handle paywalled content seamlessly using the L402 protocol. The notebook guides through the process of searching for an image on the Fewsats platform and downloading it after automatic payment processing.
 
-Explore the functionalities demonstrated in the `agent.py` script, which includes document summarization, secure upload, and automated access to paywalled content.
+2. **Script Demo**: A Python script (`agent.py`) that performs document summarization, secure upload, and automated access to paywalled content. This demo is more focused on document handling and monetization.
 
 ## Key Features
 
-- **Document Upload and Monetization**: The agent allows users to upload documents and set prices for access, enabling content creators to monetize their work effectively.
+- **Automated Download and Payment**: Both demos utilize the L402 protocol to automatically handle downloads and payments for paywalled content, ensuring seamless access.
 
-- **Advanced Search Capabilities**: Utilizing LlamaIndex, the agent can perform complex searches across the uploaded documents, retrieving relevant information quickly and efficiently.
-
-- **Automated Download and Payment**: The agent integrates with FewsatsCLI to handle downloads of paywalled content. It uses a lightning wallet to automatically process payments, ensuring native access to L402 paywalled content.
-
-## Demo Workflow
-
-The demo in `agent.py` now supports two primary workflows, controlled via command-line arguments:
-
-1. **Upload Workflow**:
-   - **Summarization**: For each document, the agent first calls the summary tool to generate a concise description of the document.
-   - **Upload**: Using the description and the document's details, the upload tool then securely uploads the document to the Fewsats platform, setting a price for access. This step demonstrates the agent's capability to handle document monetization effectively.
-
-2. **Search Workflow**:
-   - **Search and Retrieve**: The agent uses the search tool to find relevant documents based on a query (e.g., "long lora").
-   - **Download and Payment**: For any found documents, the agent automatically handles the download and payment process using the L402 protocol, showcasing seamless access to paywalled content.
-   - **Post-Download Processing**: After downloading, the agent can perform additional tasks such as summarizing the document or conducting further searches within the content. This step illustrates the agent's versatility in handling and processing secured content.
+- **Document and Image Handling**: The agent can manage both documents and images, performing tasks like summarization, search, and retrieval.
 
 
 ## Setup and Installation
 
-To run the upload workflow, you need to have the FewsatsCLI installed and configured:
+To run the demos, you need to have the FewsatsCLI installed and configured and linked to a wallet:
 
 1. Install FewsatsCLI from [GitHub](https://github.com/Fewsats/fewsatscli).
 2. Create an account using: `fewsatscli account signup`
 3. Login to your account: `fewsatscli login`
-
-To run the search workflow, you need to have a wallet connected to FewsatsCLI:
-
-1. Connect your wallet to FewsatsCLI using: `fewsatscli wallet connect`
+4. Connect your wallet to FewsatsCLI using: `fewsatscli wallet connect`
 
 
 Ensure you have Python and the necessary libraries installed to run the scripts. 
@@ -48,25 +30,24 @@ Ensure you have Python and the necessary libraries installed to run the scripts.
 make install
 ```
 
-
-## Running the Demo
-
-
-To run the upload workflow:
+and export your OpenAI key as an environment variable:
 
 ```
-python agent.py --upload
+export OPENAI_API_KEY=sk-...
 ```
+
+
+## Running the Demos
+
+
+To launch the Jupyter notebook:
+
+```
+jupyter notebook agent-demo.ipynb
+```
+
 
 To run the search workflow:
 ```
 python agent.py --search
 ```
-
-
-This will activate the agent, which will process the specified documents and perform the upload as demonstrated.
-
-## Limitations
-
-This demo wraps FewsatsCLI which is intended for manual use, so it requires manual confirmation to pay for files. Future work will integrate the agent using a python library instead
-

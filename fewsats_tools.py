@@ -70,7 +70,7 @@ def create_fewsats_tools():
     search_tool = FunctionTool.from_defaults(
         name="search_tool",
         fn=search_file,
-        description="Searches for files in the storage."
+        description="Searches for files in the fewsats platform."
     )
 
     download_tool = FunctionTool.from_defaults(
